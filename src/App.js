@@ -8,7 +8,7 @@ import PageButton from "./components/PageButton";
 import ConfigModal from "./components/ConfigModal";
 import ConnectButton from "./components/ConnectButton";
 import CurrencyField from "./components/CurrencyField";
-import { Dots } from "loading-animations-react";
+//import { Dots } from "loading-animations-react";
 import coinsJson from "./coinList.json";
 import ERC20ABI from "./abi.json";
 import JSBI from "jsbi";
@@ -126,6 +126,7 @@ export default function App() {
 
   // function to getSwapPrice
   const getSwapPrice = (inputAmount) => {
+    console.log('getSwapPrice')
     setLoading(true);
     // setInputAmount(inputAmount);
 
@@ -144,7 +145,6 @@ export default function App() {
     setInputAmount(e.target.value);
   };
 
-  console.log(ratio);
 
   // return
   return (
@@ -202,7 +202,6 @@ export default function App() {
               signer={signer}
               getBalance={getBalance2}
               balance={coin2Amount}
-              Dots={Dots}
               loading={loading}
             />
           </div>
